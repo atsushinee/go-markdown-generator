@@ -7,6 +7,7 @@ package main
 import (
 	"github.com/atsushinee/go-markdown-generator/doc"
 	"io/ioutil"
+	"log"
 )
 
 func main() {
@@ -25,7 +26,7 @@ func example() {
 		WriteCodeLine("lichun")
 
 	book.WriteTitle("Website", doc.LevelNormal)
-	book.WriteLinkLine("https://lichunorz.com", "lichunorz")
+	book.WriteLinkLine("lichunorz", "https://lichunorz.com")
 
 	t := doc.NewTable(4, 4)
 	t.SetTitle(0, "Version")
@@ -37,14 +38,17 @@ func example() {
 	t.SetContent(0, 2, "Lee")
 	t.SetContent(0, 3, "无")
 	book.WriteTable(t)
-	book.Export("README.md")
+	err := book.Export("README.md")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 ```
 ##### Author
 `lichun`
 ##### Website
-[https://lichunorz.com](lichunorz)
+[lichunorz](https://lichunorz.com)
 
 |Version|Date|Creator|Remarks|
 |----|----|----|----|
