@@ -1,12 +1,9 @@
-### Go-MarkDownDoc-Generator
-
-
-``` go
 package main
 
 import (
 	"github.com/atsushinee/go-markdown-generator/doc"
 	"io/ioutil"
+	"log"
 )
 
 func main() {
@@ -37,18 +34,5 @@ func example() {
 	t.SetContent(0, 2, "Lee")
 	t.SetContent(0, 3, "无")
 	book.WriteTable(t)
-	book.Export("README.md")
+	log.Fatal(book.Export("README.md"))
 }
-
-```
-##### Author
-`lichun`
-##### Website
-[https://lichunorz.com](lichunorz)
-
-|Version|Date|Creator|Remarks|
-|----|----|----|----|
-|v1|2019-11-21|Lee|无|
-|||||
-|||||
-|||||
